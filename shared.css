@@ -1,0 +1,178 @@
+/* 
+    Shared.css - Loaded by EVERY page in the app.
+
+    This file contains only things that are the same on every page: 
+    - CSS var (brand colors, fonts, spacing) 
+    - Reset & base styles
+    - The top navigation bar 
+    - Shared button styles
+
+    Page-specific styles go in each page's own CSS file.
+*/
+
+/* CSS VARIABLES */
+
+:root{ 
+    --color-primary: #1a3a5c; 
+    --color-primary-lt: #2a5298; 
+    --color-accent: #c8a951; 
+    --color-bg: #f4f2ee; 
+    --color-surface: #ffffff; 
+    --color-border: #ddd9d0; 
+    --color-text: #1c1c1e; 
+    --color-text-muted: #6b6b6b; 
+    --color-error: #c0392b; 
+
+    --radius-sm: 6px; 
+    --radius-md: 12px; 
+    --radius-lg: 20px; 
+    --shadow-card: 0 8px 32px rgba(0, 0, 0,0.18); 
+
+    --font-display: 'DM Serif Display', Georgia, serif; 
+    --font-body: 'DM Sans', system-ui, sans-serif; 
+}
+
+/* RESET & BASE */
+
+*, *::before, *::after { 
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+}
+
+html, body{ 
+    height: 100%;
+    font-family: var(--font-body); 
+    background: var(--color-bg); 
+    color: var(--color-text); 
+    -webkit-font-smoothing: antialiased; 
+}
+
+/* TOP NAVIGATION BAR  */
+     /* NOTE: The navbar appears on every page except Login. 
+              It contains: Hamburger menu; University Logo; logout; help
+              Each page's HTML includes the same navbar markup that lives here */
+.navbar{ 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: var(--color-primary); 
+    color: #fff; 
+    padding: 0.75rem, 1.25rem; 
+    position: sticky; 
+    top: 0; 
+    /* stays on top when page scrolls */
+    z-index: 100; 
+
+}
+
+.navbar-brand{ 
+    font-family: var(--font-display); 
+    font-size: 1.2rem; 
+    color: #fff; 
+    text-decoration: none; 
+    letter-spacing: 0.02em; 
+}
+
+.navbar-actions{ 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+}
+
+    /* NOTE: small text links in the navbar (logout, user options, ?) */
+
+.navbar-link{ 
+    font-size:0.78rem; 
+    font-weight: 500; 
+    color: rgba(255, 255, 255, 0.85); 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    text-decoration: none; 
+    padding: 0.25rem 0.5rem; 
+    border-radius: var(--radius-sm); 
+    transition: background 0.15s, color 015s; 
+    font-family: var(--font-body); 
+
+}
+
+.navbar-link:hover{ 
+    background: rgba(255, 255, 255, 0.15); 
+    color: #fff; 
+}
+
+    /* NOTE: Hamburger Icon( 3lines)  */
+
+.hamburger{ 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+    cursor: pointer; 
+    padding: 4px; 
+    background:none; 
+    border: none; 
+}
+
+.hamburger span { 
+    display: block; 
+    width: 22px; 
+    height: 2px;
+    background: #fff; 
+    border-radius: 2px; 
+    transition: transform 0.2s; 
+
+}
+
+/*  SHRAED BUTTON STYLES */
+
+    /* NOTE: .btn-campus - our primary action button. 
+             built on top of bootstrap's .btn class */
+
+.btn-campus{ 
+    background: var(--color-primary);
+    color: #fff; 
+    font-family: var(--font-body); 
+    font-weight:600; 
+    letter-spacing: 0.03em; 
+    border: none; 
+    border-radius: var(--radius-sm); 
+    transition: background 0.2s, transfrom 0.1s; 
+}
+
+.btn-campus:hover{ 
+    background:var(--color-primary-lt); 
+    color: #fff; 
+
+}
+
+.btn-campus:active{ 
+    transform: scale(0.98); 
+}
+
+    /* NOTE: secondary outlined button */
+
+.btn-campus-outline { 
+    background:transparent; 
+    color: var(--color-primary); 
+    border: 2px solid var(--color-primary); 
+    font-family: var(--font-body); 
+    font-weight: 600; 
+    border-radius: var(--radius-sm); 
+    transition: background 0.2s, color 0.2s; 
+}
+
+.btn-campus-outline:hover{ 
+    background: var(--color-primary); 
+    color: #fff; 
+}
+
+/* PAGE WRAPPER */
+    /* Wraps the content area below the navbar on inner pages. 
+       Gives conssitent padding and max-width  */
+
+.page-content{ 
+    max-width: 680px; 
+    margin: 0 auto ; 
+    padding: 1.5rem 1rem; 
+}
