@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life - Sign In</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
+
+    <!-- Bootstrap that gives us access to all Utility classes like mt-3, d-flex, btn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- shared.css first for variables, then loginPageStyle.css for page-specific styles-->
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="loginPageStyles.css">
+</head>
+<body>
+
+        <!-- Background image behind the login page -->
+         <div class="login-bg"></div>
+        
+        <!-- Dark overlay so text is readable over the photo -->
+         <div class="login-overlay"></div>
+
+        <!-- The login card uses Bootstrap's card components as the base 
+             so we can layer the .login-card styles on top for a custom 
+             look. -->
+         <div class="login-card card shadow-lg">
+            <div class="card-body p-4">
+                <h1 class="login-title text-center mb-4">Sign In</h1>
+
+                <!-- Bootstrap's .mb-3 adds margin-bottom spacing between fields.
+                     used a <div> instead of a <form> to keep things simple
+                    USERNAME ROW! -->
+                <div class="mb-3">
+
+                    <!-- Bootstrp label .form-label adds proper spacing below the label.
+                         The 'for' attribute must match the input's 'id' for accesibility. -->
+                    <label for="username" class="form-label field-label">USERNAME</label>
+
+                    <!-- .form-control is bootstrap's input class.
+                         this handles sizing, border, focus ring, and padding automatically -->
+                    <input type="text" id="username" class="form-control" placeholder="Enter your student ID" autocomplete="username"/>
+                
+                </div>
+
+                <!-- PASSWORD ROW! -->
+                <div class="mb-3">
+                    <label for="password" class="form-label field-label">PASSWORD</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" autocomplete="current-password"/>
+                </div>
+
+                <!-- Bootstrap .text-danger gives a red text for errors.
+                     .d-none hides it-our JS swaps this to .d-block to show it -->
+                <p class="text-danger small d-none mb-2" id="login-error">
+                    Please enter your username and password.
+                </p>
+
+                <!-- .btn and .w-100 are bootstrp classses.
+                     .btn-campus is my own CSS definedin loginPageStyles.css
+                     -->
+                <button class="btn btn-campus w-100 mt-1" data-action="login">Continue</button>
+
+            </div>
+         </div>
+
+    <!-- Scripts ALWAYS go at the bottom of <body> to ensure 
+         the HTML is loaded before JS tries to find elements -->
+    
+    <!-- Bootstrp JS bundle - needed for interactive Bootstrap
+         components. 
+         Always place script tags at the bottom of <body>, before custom scripts -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="loginPageJS.js"></script>
+</body>
+</html>
