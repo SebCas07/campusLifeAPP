@@ -22,7 +22,6 @@ body{
 .login-bg{ 
     position: fixed; 
     inset: 0; 
-    /* add background image where %s is at */
     background-image: url(../imgs/NPU_campusView_1.jpg); 
     background-size: cover; 
     background-position: center top; 
