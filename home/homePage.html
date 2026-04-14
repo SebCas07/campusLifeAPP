@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life - Home</title>
+
+    <!-- Styles for font  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
+
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- shared.css for brand var and navbar, then home specific styles in the bottom  -->
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="homePageStyles.css">
+</head>
+<body>
+    
+    <!-- NAVBAR
+         This exact navbar is copied to every inner page.
+         styles live in shared.css so it looks the same everywhere. -->
+    
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        
+        <!-- Hamburger menu = toggles the side drawer (built in homePageJS.js) -->
+         <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="side-drawer">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+         </button>
+
+        <!-- CLicking the logo always takes you back to home -->
+         <a href="../home/homePage.html" class="navbar-brand">Uni Logo / Name</a>
+        
+        <div class="navbar-actions">
+
+            <!-- User options opens the side drawer showingh school ID, address etc. -->
+            <button class="navbar-link" id="user-options-btn" aria-haspopup="true">User Options</button>
+            <!-- Logout clears session and returns to login -->
+            <button class="navbar-link" id="logout-btn">Logout</button>
+            <!-- help symbol -->
+            <button class="navbar-link" aria-label="Help">?</button>
+       
+        </div>
+    </nav>
+
+    <!-- SIDE DRAWER (User Profile panel) 
+         hidden off-scrren by default.  Hamburger button toggles it 
+         Contains: school ID , address, and other user info  -->
+
+    <div class="side-drawer" id="side-drawer" aria-hidden="true" role="dialog" aria-label="User Profile">
+        <div class="side-drawer-header">
+            <h2 class="side-drawer-title">My Profile</h2>
+            <button class="side-drawer-close" id="drawer-close-btn" aria-label="Close menu">&times;</button>
+
+        </div>
+
+        <div class="side-drawer-body"> 
+            <!-- Greeting pulls username form sessionStorage (set at login) -->
+             <p class="drawer-greeting">Welcome, <span id="drawer-username">Student</span></p>
+             <hr>
+             <ul class="drawer-info-list">
+                <li><span class="drawer-label">School ID</span><span class="drawer-value">Displayed Here</span></li>
+                <li><span class="drawer-label">Address</span><span class="drawer-value">Displayed Here</span></li>
+                <li><span class="drawer-label">Major</span><span class="drawer-value">Displayed Here</span></li>
+                <li><span class="drawer-label">Year</span><span class="drawer-value">Displayed Here</span></li>
+             </ul>
+        </div>
+    </div>
+</body>
+</html>
