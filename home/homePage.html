@@ -70,5 +70,96 @@
              </ul>
         </div>
     </div>
+
+    <!-- Dark backdrop behind the drawer when opened  -->
+     <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    
+    <!-- MAIN LAYOUT
+         Two-column on desktop: content on left, activity sidebar on right.
+         stacks to single column on mobile (bootstrap handles this ) -->
+    
+     <main class="page-content" id="main-content">
+        <div class="row g-4">
+            <!-- LEFT COLUMN: Activity Feed + Nav buttons -->
+             <div class="col-12 col-lg-8">
+                <!-- Activity post it section
+                     shows campus events fetched from Eventbrite API -->
+                <section class="activity-card mb-4" aria-label="Today's campus activities">
+                    <h2 class="activity-title">Today on Campus</h2>
+                    <p class="activity-subtitle">Acitivities around campus happening today</p>
+
+                    <div id="events-container">
+                        <!-- loading state - replaced by JS once API responds -->
+                         <div class="events-loading" id="events-loading">
+                            <div class="spinner-border spinner-border-sm text-secondary me-2" role="status" aria-hidden="true"></div>
+                            <span>Loading today's events...</span>
+            
+                         </div>
+
+                         <!-- Events list - populated by homePageJS.js -->
+                         <!-- aria-live="polite" tells screen readers to announce new content  -->
+                          <div id="events-list" class="events-list" aria-live="polite"></div>
+
+                          <!-- SHown if API fails or returns no events   -->
+                          <p class="events-empty d-none" id="events-empty">
+                            No events found for today. Check back later!
+                          </p>
+                    </div>
+                </section>
+
+                <!-- Navigation Buttons -->
+                 <section aria-label="Campus navigation">
+                    <!-- Visually-hidden hodes gthe heading visually but keeps it readable for screen readers
+                         satisfies WCAG requirements -->
+                    <h2 class="visually-hidden">Campus sections</h2>
+
+                    <div class="d-felx flex-column gap-3">
+                        <!-- # ARE PLACEHOLDERS FOR NOPW   -->
+                         <!-- MAP -->
+                        <a href="#" class="nav-card" aria-label="Go to Campus Map">
+                            <div class="nav-card-icon" aria-hidden="true">&#9679;</div>
+                            <div class="nav-card-text">
+                                <span class="nav-card-title">Campus Map</span>
+                                <span class="nav-card-text">Find buildings and departments</span>
+        
+                            </div>
+                            <div class="nav-card-arrow" aria-hidden="true">&#8250;</div>
+
+                        </a>
+                         <!-- SUPPORT -->
+                        <a href="#" class="nav-card" aria-label="Go to Campus Support">
+                            <div class="nav-card-icon" aria-hidden="true">&#9679;</div>
+                            <div class="nav-card-text">
+                                <span class="nav-card-title">Campus Support</span>
+                                <span class="nav-card-sub">Departments, contacts, and resources</span>
+                            
+                            </div>
+                            <div class="nav-card-arrow" aria-hidden="true" > &#9679;</div>
+
+                        </a>
+
+                        <!-- CREDITS -->
+                         <a href="#" class="nav-card" aria-label="Go to Credits and Academics">
+                            <div class="nav-card-icon" aria-hidden="true">&#9679;</div>
+                            <div class="nav-card-text">
+                                <span class="nav-card-title">Credits / Academics</span>
+                                <span class="nav-card-sub">Your schedule and credit tracker</span>
+
+                            </div>
+                            <div class="nav-card-arrow" aria-hidden="true">&#8250</div>
+
+                         </a>
+                    </div>
+                 </section>
+
+             </div>
+            <!-- END left colunmn  -->
+
+            <!-- RIGHT COLUMN: Activity Sidebar
+                On desktop sits beside mainb content (col-lg-4)
+                On mobile stacks below nav buttons (col-12)  -->
+        </div>
+
+     </main>
 </body>
 </html>
