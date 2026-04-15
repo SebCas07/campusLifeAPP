@@ -1,0 +1,70 @@
+/* 
+    homePageStyles.css - Styles specific to the homePage.html page. 
+    shared.css is already loaded before this, so all CSS
+    var and navbar styles are available here.
+
+*/
+
+/* PAGE LAYOUT */
+body{ 
+    background: var(--color-bg); 
+    min-height:100vh;
+    display: flex;
+    flex-direction: column; 
+
+}
+
+#main-content{ 
+    flex: 1; 
+
+}
+
+/* ACTIVITY CARD (post-it style) */
+
+    /* wARM OFF-YELLOW COLOR TO MATCH THE POST-IT 
+     Left accent stripe in the brand gold color. */
+
+.activity-card { 
+    background: #fffbe6; 
+    border: 1px solid #f0e68c; 
+    border-radius: var(--radius-md); 
+    padding: 1.5rem; 
+    border-left: 4px solid var(--color-accent); 
+
+}
+
+.activity-title { 
+    font-family: var(--font-display); 
+    font-size: 1.4rem; 
+    color: var(--color-primary); 
+    margin-bottom: 0.25rem; 
+
+}
+
+.activity-subtitle{ 
+    font-size: 0.85rem;
+    color: var(--color-text-muted); 
+    margin-bottom: 1rem; 
+    
+}
+
+/* EVENTS LIST  */
+
+.events-loading { 
+    display: flex; 
+    align-items: center; 
+    color: var(--color-text-muted); 
+    font-size: 0.9rem; 
+    padding: 0.5rem 0; 
+}
+
+.events-item{ 
+    background: #fff; 
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm); 
+    padding: 0.75rem 1rem; 
+    text-decoration: none; 
+    color: var(--color-text); 
+    display: block; 
+    transition: border-color 0.2s, box-shadow 0.2s; 
+}
