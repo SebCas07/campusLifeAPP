@@ -322,3 +322,31 @@ body{
     color: var(--color-text);
 
 }
+
+/* FOOTER */
+.campus-footer { 
+    background: var(--color-primary); 
+    color: rgba(255, 255, 255, 0.75); 
+    text-align: center; 
+    padding: 1rem; 
+    margin-top: 2rem; 
+
+}
+
+/* RESPONSIVE */
+@media(max-width: 991px){ 
+    .activity-sidebar{ 
+        position: static; 
+
+    }
+}
+
+@media (max-width: 576px) { 
+    .acitvity-card{ 
+        padding: 1rem; 
+    }
+
+    .nav-card{
+        padding: 0.85rem 1rem; 
+    }
+}
