@@ -158,8 +158,29 @@
             <!-- RIGHT COLUMN: Activity Sidebar
                 On desktop sits beside mainb content (col-lg-4)
                 On mobile stacks below nav buttons (col-12)  -->
+            <div class="col-12 col-lg-4">
+                <aside class="activity-sidebar" aria-label="Upcoming events sidebar">
+                    <h2 class="sidebar-title">Coming Up</h2>
+                    <div id="sidebar-events" aria-live="polite">
+                        <div id="sidebar-loading">
+                            <small class="text=muted">Loading...</small>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <!-- END right column -->
+
         </div>
 
      </main>
+
+     <!-- Footer -->
+    <footer class="campus-footer" role="contentinfo">
+        <small>School logo &nbsp;|&nbsp; School information (main contact, address, etc.)</small>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="homePageJS.js"></script>
 </body>
 </html>
