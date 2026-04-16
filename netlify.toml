@@ -1,0 +1,10 @@
+#netlify.toml 
+#This file tells Netlify how to deploy the project 
+#This lives in the ROOT of the campus-life-app/folder
+
+[build]
+    #Where your HTML files are (root of the project)
+    publish = "."
+
+    #Where netlify should look for your server functions 
+    functions = "netlify/functions"
