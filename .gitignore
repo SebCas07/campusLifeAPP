@@ -1,0 +1,18 @@
+# .gitignore - tells git whcih files to never push to github
+
+# local enviorment var files
+#if a .env files are ever created for local tetsing, 
+#this stops it form being pushed to Github
+
+.env
+.env.local
+.env.*
+
+#Netlify local cache (created when 'netlify dev' is ran)
+.netlify/
+
+#Mac systems files - not apart of this project
+.DS_Store
+
+#Window system files
+Thumbs.db
