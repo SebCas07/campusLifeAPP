@@ -8,6 +8,10 @@
 .env.local
 .env.*
 
+# dependencies 
+#without node_modules/ repo can get huge and installs can break across enviorments
+node_modules/
+
 #Netlify local cache (created when 'netlify dev' is ran)
 .netlify/
 
