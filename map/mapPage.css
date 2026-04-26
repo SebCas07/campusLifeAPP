@@ -1,0 +1,263 @@
+/* 
+    mapPage.css -styles specific to the Campus Map page
+*/
+
+body{ 
+    background: var(--color-bg); 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+
+}
+
+#main-content{ 
+    flex: 1; 
+
+}
+
+/* MAP HEADER */
+    .map-title{ 
+        font-family: var(--font-diplay); 
+        font-size: 1.6rem; 
+        color: var(--color-primary); 
+        margin-bottom: 0.25rem; 
+
+    }
+
+    .map-subtitle{ 
+        font-size: 0.85rem; 
+        color: var(--color-text-muted); 
+        margin: 0; 
+
+    }
+
+/* Filter buttons */
+    .map-filters{ 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+
+    }
+
+    .filter-btn{ 
+        padding: 0.4rem 1rem; 
+        border: 1.5px solid var(--color-border); 
+        /* for the pill shape */
+        border-radius: 999px; 
+        background: #fff;
+        font-family: var(--font-body); 
+        font-size: 0.82rem; 
+        font-weight: 500; 
+        color: var(--color-text-muted); 
+        cursor: pointer; 
+        transition: all 0.2s; 
+
+
+    }
+
+    .filter-btn:hover{ 
+        border-color: var(--color-primary); 
+        color: var(--color-primary); 
+
+    }
+
+/* Active filter pill that's filled with brand color */
+    .filter-btn.active{ 
+        background: var(--color-primary); 
+        border-color: var(--color-primary); 
+        color: #fff; 
+
+    }
+
+/* Map contatiner */
+    #map{ 
+        height: 480px; 
+        border-radius: var(--radius-md); 
+        border: 1px solid var(--color-border); 
+        /* z-index at 1 becasue it keeps the map below the navbar */
+        /* without it leaflet's controls would overlap the navbar */
+        z-index: 1; 
+        position: relative;
+
+    }
+
+/* Custonm leaflet popup */
+    /* leaflet renders popups with its own default styles
+       We override those tyles here */
+    
+    .leaflet-popup-content-wrapper{ 
+        border-radius: var(--radius-md) !important; 
+        box-shadow: var(--shadow-card) !important; 
+        font-family: var(--font-body) !important; 
+        padding: 0 !important; 
+        overflow: hidden; 
+
+    }
+
+    .leaflet-popup-content{ 
+        margin: 0 !important; 
+        width: 220px !important; 
+    }
+
+    /* custom popup content built by mapPage.js */
+    .popup-header { 
+        background: var(--color-primary); 
+        color: #fff; 
+        padding: 0.75rem 1rem; 
+
+    }
+
+    .popup-building-name{ 
+        font-weight: 600; 
+        font-size: 0.95rem; 
+        margin: 0; 
+
+    }
+
+    .popup-category{ 
+        font-size: 0.72rem; 
+        opacity: 0.8rem; 
+        text-transform: uppercase; 
+        letter-spacing: 0.05em; 
+
+    }
+
+    .popup-body{ 
+        padding: 0.75rem 1rem; 
+
+    }
+
+    .popup-detail{ 
+        font-size: 0.82rem; 
+        color: var(--color-text-muted); 
+        margin-bottom: 0.3rem; 
+        display: flex; 
+        gap: 0.4rem; 
+
+    }
+
+    .popup-detail strong{ 
+        color: var(--color-surface); 
+        border: 1px solid var(--color-border); 
+        border-radius: var(--radius-md); 
+        padding: 1.25rem; 
+        /* sidebar scrolls independently if list is long  */
+        max-height: 540px; 
+        overflow-y: auto; 
+    }
+
+    .building-cards{ 
+        display: flex; 
+        flex-direction: column; 
+        gap: 0.6rem; 
+
+    }
+
+    /* each building card in the sidebar. 
+       clikcing it pans the map to that building */
+    
+    .building-card{ 
+        padding: 0.7rem 0.9rem; 
+        border: 1.5px solid var(--color-border); 
+        border-radius: var(--radius-sm); 
+        cursor: pointer; 
+        transition: border-color 0.2s, background 0.2; 
+        background: #fff; 
+
+    }
+
+    .building-card:hover{ 
+        border-color: var(--color-primary); 
+        background: #f0f4f8; 
+
+
+    }
+
+    /* highlighted when its marker is active on the map  */
+    .building-card.active{ 
+        border-color: var(--color-primary); 
+        background: #e8f0f8; 
+
+    }
+
+    .building-card-name{ 
+        font-weight: 600; 
+        font-size: 0.88rem; 
+        color: var(--color-text);
+        margin-bottom: 0.15rem; 
+
+    }
+
+    .building-card-meta{ 
+        font-size: 0.75rem; 
+        color: var(--color-text-muted); 
+
+    }
+
+    /* category badge on each card */
+
+    .building-badge{ 
+        display: inline-block; 
+        font-size: 0.65rem; 
+        font-weight: 600; 
+        text-transform: uppercase; 
+        letter-spacing: 0.05em; 
+        padding: 0.15rem 0.5rem; 
+        border-radius: 999px; 
+        margin-bottom: 0.3rem; 
+
+    }
+
+    .badge-academic { 
+        background: #dbeafe; 
+        color: #1e40af; 
+
+    }
+
+    .badge-services { 
+        background: #dcfce7; 
+        color: #15803d; 
+    }
+
+    .badge-student-life { 
+        background: #fef3c7; 
+        color: #b45309;
+    }
+
+/* FOOTER */
+    .campus-footer{ 
+        background: var(--color-primary); 
+        color: rgba(255, 255, 255, 0.75); 
+        text-align: center; 
+        padding: 1rem; 
+        margin-top: 2rem; 
+    }
+
+/* reponsive */
+    @media (max-width: 991px){ 
+        #map { 
+            height: 350px; 
+        }
+
+        .building-list{ 
+            max-height: none; 
+        }
+    }
+
+    @media ( max-width: 576px){ 
+        #map{
+            height: 280px; 
+
+        }
+
+        .map-filters{ 
+            gap: 0.35rem; 
+        }
+
+        .filter-btn{ 
+            font-size: 0.75rem; 
+            padding: 0.35rem 0.75rem; 
+        }
+    }
+
+    
