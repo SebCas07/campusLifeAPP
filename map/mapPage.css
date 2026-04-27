@@ -17,7 +17,7 @@ body{
 
 /* MAP HEADER */
     .map-title{ 
-        font-family: var(--font-diplay); 
+        font-family: var(--font-display); 
         font-size: 1.6rem; 
         color: var(--color-primary); 
         margin-bottom: 0.25rem; 
@@ -116,7 +116,7 @@ body{
 
     .popup-category{ 
         font-size: 0.72rem; 
-        opacity: 0.8rem; 
+        opacity: 0.8; 
         text-transform: uppercase; 
         letter-spacing: 0.05em; 
 
@@ -137,13 +137,27 @@ body{
     }
 
     .popup-detail strong{ 
-        color: var(--color-surface); 
+        color: var(--color-text); 
+        min-width: 50px; 
+
+    }
+
+    .building-list{
         border: 1px solid var(--color-border); 
         border-radius: var(--radius-md); 
         padding: 1.25rem; 
         /* sidebar scrolls independently if list is long  */
         max-height: 540px; 
         overflow-y: auto; 
+    }
+
+    .building-list-title{
+        font-family: var(--font-display); 
+        font-size: 1.1rem; 
+        color: var(--color-primary); 
+        margin-bottom: 1rem; 
+        padding-bottom: 0.5rem; 
+        border-bottom: 2px solid var(--color-accent); 
     }
 
     .building-cards{ 
@@ -161,7 +175,7 @@ body{
         border: 1.5px solid var(--color-border); 
         border-radius: var(--radius-sm); 
         cursor: pointer; 
-        transition: border-color 0.2s, background 0.2; 
+        transition: border-color 0.2s, background 0.2s; 
         background: #fff; 
 
     }
