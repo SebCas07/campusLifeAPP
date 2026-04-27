@@ -276,3 +276,35 @@ html, body{
   font-size: 0.9rem;
   color: var(--color-text);
 }
+
+/* back home button */
+
+        .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: 1.25rem;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    
+    .back-btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    }
+    
+    /* The arrow before the text */
+    .back-btn::before {
+    content: '←';
+    font-size: 1rem;
+    line-height: 1;
+    }
