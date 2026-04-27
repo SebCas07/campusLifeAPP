@@ -1,0 +1,223 @@
+/* supportPage.css */
+
+body {
+    background: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+ 
+main {
+    flex: 1;
+}
+ 
+/* Page header */
+    .support-title {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+    }
+    
+    .support-subtitle {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        margin: 0;
+    }    
+
+/* Search Bar */
+
+    .support-search-input {
+        max-width: 420px;
+        border: 1.5px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    /* Override Bootstrap's blue focus ring with brand color */
+    .support-search-input:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.12);
+    }
+
+/* Filter buttons */
+    /* pill shaped filter buttons  */
+    .support-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        border: 1.5px solid var(--color-border);
+        border-radius: 999px;
+        background: #fff;
+        font-family: var(--font-body);
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--color-text-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .filter-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+    
+    .filter-btn.active {
+        background: var(--color-primary);
+        border-color: var(--color-primary);
+        color: #fff;
+    }
+ 
+/* Department cards */
+    /* Each department card gets: 
+       -A colored top accent bar
+       -Departmnet name and description
+       -contact details (phone, email, hours, location)
+       -A "How we can help" section
+        */
+    
+    .dept-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+    
+    .dept-card:hover {
+        box-shadow: 0 6px 24px rgba(26, 58, 92, 0.12);
+        transform: translateY(-3px);
+    }
+    
+    /* Colored top accent bar — color set inline by support.js */
+    .dept-card-accent {
+        height: 5px;
+    }
+    
+    .dept-card-body {
+        padding: 1.25rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .dept-card-name {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+    }
+    
+    .dept-card-desc {
+        font-size: 0.83rem;
+        color: var(--color-text-muted);
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Contact details list */
+    .dept-contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+    
+    .dept-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.82rem;
+        color: var(--color-text);
+    }
+    
+    /* Small label like "Phone", "Email", "Hours" */
+    .dept-contact-label {
+        font-weight: 600;
+        color: var(--color-text-muted);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        min-width: 52px;
+        padding-top: 1px;
+    }
+    
+    /* Phone and email are clickable links */
+    .dept-contact-link {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .dept-contact-link:hover {
+        text-decoration: underline;
+    }
+    
+    /* "How we can help" tags at the bottom of each card */
+    .dept-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-top: auto;   /* pushes tags to bottom of card */
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--color-border);
+    }
+    
+    .dept-tag {
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: var(--color-bg);
+        color: var(--color-text-muted);
+        border: 1px solid var(--color-border);
+    }
+
+
+/* No results message */
+    .no-results {
+        text-align: center;
+        color: var(--color-text-muted);
+        font-style: italic;
+        padding: 2rem 0;
+    }
+
+/* Footer */
+    .campus-footer {
+        background: var(--color-primary);
+        color: rgba(255,255,255,0.75);
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+/* Responsive */
+    @media (max-width: 576px) {
+        .support-title {
+            font-size: 1.4rem;
+        }
+    
+        .support-search-input {
+            max-width: 100%;
+        }
+    
+        .filter-btn {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+        }
+    }
+
+
